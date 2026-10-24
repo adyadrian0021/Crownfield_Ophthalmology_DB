@@ -77,3 +77,35 @@ INSERT INTO Prescription (AppointmentID, MedicineName) VALUES
 (1011, 'PreserVision AREDS 2'),
 (1013, 'Ofloxacin drops'),
 (1013, 'Cyclopentolate');AppointmentID.
+
+-- ========================================================
+-- 2. PART C: INDIVIDUAL SQL QUERIES (1 to 4)
+-- ========================================================
+
+-- Query 1: Aggregate Query (GROUP BY & HAVING)
+SELECT ClinicianID, COUNT(AppointmentID) AS TotalAppointments
+FROM Appointments
+GROUP BY ClinicianID
+HAVING COUNT(AppointmentID) > 1;
+
+-- Query 2: INNER JOIN (Across 3 Related Tables)
+SELECT a.AppointmentID, p.PatientName, c.ClinicianName, cl.ClinicName, a.Date
+FROM Appointments a
+INNER JOIN Patient p ON a.PatientID = p.PatientID
+INNER JOIN Clinician c ON a.ClinicianID = c.ClinicianID
+INNER JOIN Clinic cl ON a.ClinicID = cl.ClinicID;
+
+-- Query 3: LEFT JOIN (Revealing missing/optional data)
+SELECT p.PatientName, a.AppointmentID, pr.MedicineName
+FROM Patient p
+LEFT JOIN Appointments a ON p.PatientID = a.PatientID
+LEFT JOIN Prescription pr ON a.AppointmentID = pr.AppointmentID;
+
+-- Query 4: Subquery / CTE
+SELECT AppointmentID, PatientID, Diagnosis 
+FROM Appointments
+WHERE ClinicianID IN (
+    SELECT ClinicianID 
+    FROM Clinician 
+    WHERE Specialty = 'Glaucoma'
+);
