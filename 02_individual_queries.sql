@@ -48,19 +48,19 @@ INSERT INTO Clinic (ClinicID, ClinicName) VALUES
 
 -- 4. POPULATE APPOINTMENTS TABLE (3 Base Records + 10 Synthetic)
 INSERT INTO Appointments (AppointmentID, PatientID, ClinicianID, ClinicID, Date, Time, Diagnosis, FollowUpPeriod, UrgencyLevel, Notes) VALUES
-(1001, 'P9012', 'C301', 'CL10', '2026-10-12', '09:30:00', 'Open-angle glaucoma', '6 weeks', 'High', 'Check eye pressure'),
-(1002, 'P4431', 'C102', 'CL20', '2026-10-12', '10:15:00', 'Corneal abrasion', '1 week', 'Low', 'Clear recovery'),
-(1003, 'P7722', 'C301', 'CL10', '2026-10-13', '14:00:00', 'Ocular hypertension', '3 months', 'Routine', 'Monitor fields'),
-(1004, 'P0001', 'C002', 'CL01', '2026-10-24', '09:00:00', 'Diabetic macular oedema', '4 weeks', 'Urgent', 'OCT scan completed'),
-(1005, 'P0002', 'C003', 'CL03', '2026-10-24', '10:30:00', 'Keratoconus', '8 weeks', 'Routine', 'Corneal topography'),
-(1006, 'P0003', 'C001', 'CL01', '2026-10-25', '11:15:00', 'Glaucoma suspect', '26 weeks', 'Routine', 'Visual fields baseline'),
-(1007, 'P0004', 'C006', 'CL04', '2026-10-26', '14:00:00', 'Nuclear Cataract', '12 weeks', 'Routine', 'Listed for surgery'),
-(1008, 'P0005', 'C005', 'CL05', '2026-10-26', '15:30:00', 'Retinal Detachment', '1 day', 'Emergency', 'Refer to vitreo-retinal theater'),
-(1009, 'P0006', 'C008', 'CL02', '2026-10-27', '09:45:00', 'Optic Neuritis', '2 weeks', 'High', 'MRI scheduled'),
-(1010, 'P0007', 'C007', 'CL06', '2026-10-27', '11:00:00', 'Ocular hypertension', '6 weeks', 'Routine', 'IOP monitoring'),
-(1011, 'P0008', 'C009', 'CL07', '2026-10-28', '13:15:00', 'Dry Macular Degeneration', '6 months', 'Routine', 'Amsler grid provided'),
-(1012, 'P0009', 'C010', 'CL08', '2026-10-28', '16:00:00', 'Cataract', '8 weeks', 'Routine', 'Pre-op assessment'),
-(1013, 'P0010', 'C003', 'CL09', '2026-10-29', '10:00:00', 'Corneal Ulcer', '3 days', 'Urgent', 'Scrape taken');
+(1001, 'P9012', 'C301', 'CL10', '2026-11-12', '09:30:00', 'Open-angle glaucoma', '6 weeks', 'High', 'Check eye pressure'),
+(1002, 'P4431', 'C102', 'CL20', '2026-11-12', '10:15:00', 'Corneal abrasion', '1 week', 'Low', 'Clear recovery'),
+(1003, 'P7722', 'C301', 'CL10', '2026-11-13', '14:00:00', 'Ocular hypertension', '3 months', 'Routine', 'Monitor fields'),
+(1004, 'P0001', 'C002', 'CL01', '2026-11-24', '09:00:00', 'Diabetic macular oedema', '4 weeks', 'Urgent', 'OCT scan completed'),
+(1005, 'P0002', 'C003', 'CL03', '2026-11-24', '10:30:00', 'Keratoconus', '8 weeks', 'Routine', 'Corneal topography'),
+(1006, 'P0003', 'C001', 'CL01', '2026-11-25', '11:15:00', 'Glaucoma suspect', '26 weeks', 'Routine', 'Visual fields baseline'),
+(1007, 'P0004', 'C006', 'CL04', '2026-11-26', '14:00:00', 'Nuclear Cataract', '12 weeks', 'Routine', 'Listed for surgery'),
+(1008, 'P0005', 'C005', 'CL05', '2026-11-26', '15:30:00', 'Retinal Detachment', '1 day', 'Emergency', 'Refer to vitreo-retinal theater'),
+(1009, 'P0006', 'C008', 'CL02', '2026-11-27', '09:45:00', 'Optic Neuritis', '2 weeks', 'High', 'MRI scheduled'),
+(1010, 'P0007', 'C007', 'CL06', '2026-11-27', '11:00:00', 'Ocular hypertension', '6 weeks', 'Routine', 'IOP monitoring'),
+(1011, 'P0008', 'C009', 'CL07', '2026-11-28', '13:15:00', 'Dry Macular Degeneration', '6 months', 'Routine', 'Amsler grid provided'),
+(1012, 'P0009', 'C010', 'CL08', '2026-11-28', '16:00:00', 'Cataract', '8 weeks', 'Routine', 'Pre-op assessment'),
+(1013, 'P0010', 'C003', 'CL09', '2026-11-29', '10:00:00', 'Corneal Ulcer', '3 days', 'Urgent', 'Scrape taken');
 
 -- 5. POPULATE PRESCRIPTION TABLE (4 Base Records + 10 Synthetic)
 INSERT INTO Prescription (AppointmentID, MedicineName) VALUES
