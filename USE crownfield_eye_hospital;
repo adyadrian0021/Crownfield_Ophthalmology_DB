@@ -18,3 +18,11 @@ GRANT SELECT ON crownfield_eye_hospital.Patient TO 'Patient_Role';
 
 -- Refresh the server system authorization tables
 FLUSH PRIVILEGES;
+
+-- 1. Add a secure password attribute column to hold the hashed string
+ALTER TABLE Patient ADD COLUMN PatientPassword VARCHAR(64) DEFAULT NULL;
+
+-- 2. Scramble the sensitive text string using the SHA-2 256-bit algorithm
+UPDATE Patient 
+SET PatientPassword = SHA2('SecurePass2026!', 256) 
+WHERE PatientID = 'P9012';
