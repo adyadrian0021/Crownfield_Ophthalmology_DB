@@ -1,0 +1,20 @@
+CREATE ROLE IF NOT EXISTS 'Admin_Role', 'Doctor_Role', 'Receptionist_Role', 'Patient_Role';
+
+-- 1. Administrator Permissions: Full Operational Control
+GRANT ALL PRIVILEGES ON crownfield_eye_hospital.* TO 'Admin_Role';
+
+-- 2. Doctor Permissions: Clinical Management (No Deletion Privileges)
+GRANT SELECT, INSERT, UPDATE ON crownfield_eye_hospital.Appointments TO 'Doctor_Role';
+GRANT SELECT, INSERT, UPDATE ON crownfield_eye_hospital.Prescription TO 'Doctor_Role';
+GRANT SELECT ON crownfield_eye_hospital.Patient TO 'Doctor_Role';
+
+-- 3. Receptionist Permissions: Scheduling and Basic Demographics (No Prescription Access)
+GRANT SELECT, INSERT, UPDATE ON crownfield_eye_hospital.Appointments TO 'Receptionist_Role';
+GRANT SELECT, INSERT ON crownfield_eye_hospital.Patient TO 'Receptionist_Role';
+GRANT SELECT ON crownfield_eye_hospital.Clinic TO 'Receptionist_Role';
+
+-- 4. Patient Permissions: Strict View-Only Access to Profile Data
+GRANT SELECT ON crownfield_eye_hospital.Patient TO 'Patient_Role';
+
+-- Refresh the server system authorization tables
+FLUSH PRIVILEGES;
