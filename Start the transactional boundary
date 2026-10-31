@@ -1,0 +1,15 @@
+USE crownfield_eye_hospital;
+
+-- Start the transactional boundary
+START TRANSACTION;
+
+-- Operation 1: Insert a new patient profile
+INSERT INTO Patient (PatientID, PatientName, Postcode) 
+VALUES ('P0099', 'Arthur Dent', 'W1A 1AA');
+
+-- Operation 2: Book their accompanying appointment slot
+INSERT INTO Appointments (AppointmentID, PatientID, ClinicianID, ClinicID, Date, Time, Diagnosis, FollowUpPeriod, UrgencyLevel, Notes)
+VALUES (1099, 'P0099', 'C301', 'CL10', '2026-11-15', '11:00:00', 'Routine Checkup', '6 months', 'Low', 'New patient check');
+
+-- Commit both operations safely to the disk together
+COMMIT;
