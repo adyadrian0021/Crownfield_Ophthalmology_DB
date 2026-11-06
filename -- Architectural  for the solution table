@@ -1,6 +1,6 @@
 USE crownfield_eye_hospital;
 
--- Architectural execution snippet for the solution table
+-- Architectural for the solution table
 CREATE TABLE Prescription (
     AppointmentID INT NOT NULL,
     MedicineName VARCHAR(100) NOT NULL,
